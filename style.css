@@ -2,7 +2,14 @@ body {background-color: #FFF973; color:black;}
 
 h1 {font-weight: bold; font-size: 24px;} 
 
+h2 {color:red;}
+
 /* CSS to format the gridview --START*/
-.cssgridview {width:2px; margin:5px; border: solid 1px 
+
+.cssgridview {width:auto; margin:5px 10px 0; border: solid 1px; border-collapse: collapse; text-align:center;
+				font-family: "Comic Sans MS";}
+.cssgridview  td {padding:10px; border:solid 1px ; color: black;}
+.cssgridview  th {padding: 10px; color: solid 1px black;backgroud-color: #FF4E40;}
+.cssgridview  .alt {backgroud-color: #FF7D73;}
 
 /* CSS to format the gridview --END*/
