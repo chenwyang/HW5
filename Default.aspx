@@ -3,17 +3,18 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head runat="server">
     <title></title>
-
+     <link rel="stylesheet" type="text/css" href="style.css"/> 
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
     
-    Mike's Mortgage Calculator
+        <h1>Chenwei's Mortgage Calculator</h1>
         
-        <br /><br />
+        <br />
      
         Loan Amount:<asp:TextBox ID="tbLoanAmt" runat="server" ></asp:TextBox>
                   
@@ -29,9 +30,13 @@
 
         <asp:Button ID="btnCalcPmt" runat="server" Text="Calculate" />
         
+        <br />
+        <br />
+        <asp:Button ID="btn_clear" runat="server" Text="Clear" Width="77px" />
+        
         <br /><br />
                 
-        Monthly Payment: &nbsp; <asp:Label ID="lblMonthlyPmt" runat="server"></asp:Label>
+        Your monthly payment is: &nbsp; <asp:Label ID="lblMonthlyPmt" runat="server"></asp:Label>
         
         <br /><br />
         
