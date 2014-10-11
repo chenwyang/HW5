@@ -5,6 +5,7 @@ Partial Class _Default
     Inherits System.Web.UI.Page
     'Adapted from the loan calculator found at www.dreamincode.net/forums/topic/237228-looping-issues-using-a-grid-for-mortgage-calculator-amortization/
     Protected Sub btnCalcPmt_Click(sender As Object, e As EventArgs) Handles btnCalcPmt.Click
+        ' Dim date As Date 
         Dim loanAmount As Double
         Dim annualRate As Double
         Dim interestRate As Double
@@ -48,16 +49,20 @@ Partial Class _Default
 
         'Adds items to list box, formats them for currency and adds pad spacing for each item.
         loanAmortTbl.Columns.Add("Payment Number", System.Type.GetType("System.String"))
+        loanAmortTbl.Columns.Add("Payment Date", System.Type.GetType("System.String"))
         loanAmortTbl.Columns.Add("Principal Paid", System.Type.GetType("System.String"))
         loanAmortTbl.Columns.Add("Interest Paid", System.Type.GetType("System.String"))
+        loanAmortTbl.Columns.Add("New Balance", System.Type.GetType("System.String"))
 
-
+        Dim pmtDate As Date
+        pmtDate = DateTime.Now
         'This section uses the for loop to display the loan balance and interest paid over the term of the loan.
         Dim counterStart As Integer
 
         For counterStart = 1 To loanTerm
 
             'Performs calculations for amortization of loan.
+            pmtDate = pmtDate.AddMonths(1)
             interestPaid = loanAmount * interestRate
             principal = monthlyPayment - interestPaid
             nBalance = loanAmount - principal
@@ -66,8 +71,10 @@ Partial Class _Default
             'Writes the data to a new row in the gridview.
             tRow = loanAmortTbl.NewRow()
             tRow("Payment Number") = String.Format(counterStart)
+            tRow("Payment Date") = String.Format("{0:MM/dd/yyyy}", pmtDate)
             tRow("Principal Paid") = String.Format("{0:C}", principal) ' String.Format("{0:C},principal) formats the variable "prinicpal" as currency (C).
             tRow("Interest Paid") = String.Format("{0:C}", interestPaid)
+            tRow("New Balance") = String.Format("{0:C}", nBalance)
             loanAmortTbl.Rows.Add(tRow)
 
             'Loops to next counterStart (Continues loop until counterStart requirements are met (loanTerm)).
@@ -85,5 +92,6 @@ Partial Class _Default
         tbAnnualInterest.Text = ""
         tbLoanTerm.Text = ""
         lblMonthlyPmt.Text = ""
+
     End Sub
 End Class
