@@ -1,15 +1,23 @@
+
+
 body {background-color: #FFF973; color:black;}
 
 h1 {font-weight: bold; font-size: 24px;} 
 
 h2 {color:red;}
 
+<style type="text/css">
 /* CSS to format the gridview --START*/
 
-.cssgridview {width:auto; margin:5px 10px 0; border: solid 1px; border-collapse: collapse; text-align:center;
-				font-family: "Comic Sans MS";}
-.cssgridview  td {padding:10px; border:solid 1px ; color: black;}
-.cssgridview  th {padding: 10px; color: solid 1px black;backgroud-color: #FF4E40;}
-.cssgridview  .alt {backgroud-color: #FF7D73;}
+.cssgridview {width:auto; margin:5px 10px 0; border: solid 1px #c1c1c1; border-collapse: collapse; text-align:center; font-family: Calibri;}
+
+.cssgridview  th {padding:10px; color: #fff;  background: #FF7D73; border-left:solid 1px #c1c1c1;}
+
+.cssgridview tr:nth-child(even){background-color:#A0A0A0 ;}
+.cssgridview tr:nth-child(odd){background-color:#FFFFFF;}
+
+.cssgridview  td {padding:10px; border:solid 1px #c1c1c1; color #FF8540;}
 
 /* CSS to format the gridview --END*/
+
+</style>

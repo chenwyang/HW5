@@ -6,7 +6,7 @@
 
 <head runat="server">
     <title></title>
-     <link rel="stylesheet" type="text/css" href="style.css"/> 
+     <link rel="stylesheet" type="text/css" href="./style.css"/> 
 </head>
 <body>
     <form id="form1" runat="server">
@@ -34,7 +34,10 @@
         
         <asp:RequiredFieldValidator ID="val_term" runat="server" ErrorMessage="Please enter your loan term." ControlToValidate="tbLoanTerm"></asp:RequiredFieldValidator>
         
-        <br /><br />
+        <br />
+        <br />
+        * Required fileds<br />
+        <br />
 
         <asp:Button ID="btnCalcPmt" runat="server" Text="Calculate" />
         
@@ -43,15 +46,18 @@
         <asp:Button ID="btn_clear" runat="server" Text="Clear" Width="77px" />
         
         <br />
+   
         <% If Not IsPostBack Then%>
             <p>Welcome to my mortgage calculator. Please complete the fields above to have your monthly payment and loan repayment schedule calculated for you. </p>
         
-        <% Else%>Your monthly payment is: &nbsp; <asp:Label ID="lblMonthlyPmt" runat="server"></asp:Label>
+        <% Else%>
+        
+            Your monthly payment is: &nbsp; <asp:Label ID="lblMonthlyPmt" runat="server"></asp:Label>
         
             <br /><br />
         
             <asp:GridView ID="loanGridView" runat="server" CssClass="cssgridview">
-                <AlternatingRowStyle CssClass="alt" />
+           
             </asp:GridView> 
         <% End If%>    
         </div>
